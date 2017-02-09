@@ -76,11 +76,9 @@ class ObservableObject implements Observable
          */
         call_user_func_array(array($this, 'triggerEvent'), $args);
 
-        $eventName = \array_shift($args);
         \array_unshift($args, null);
-        \array_push($args, $eventName);
         /**
-         * args = [null, $data1, $data2, ..., $eventName]
+         * args = [null, $eventName, $data1, $data2, ...]
          */
         call_user_func_array(array($this, 'triggerEvent'), $args);
         return $this;

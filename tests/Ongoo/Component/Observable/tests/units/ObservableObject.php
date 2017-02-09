@@ -177,7 +177,7 @@ class ObservableObject extends \mageekguy\atoum\test
         
         $catchAll = [];
         $catchAllValues = [];
-        $callbackCatchAll = function($value1, $value2, $eventName) use(&$catchAll, &$catchAllValues)
+        $callbackCatchAll = function($eventName, $value1, $value2) use(&$catchAll, &$catchAllValues)
         {
             if( !isset($catchAll[$eventName]) )
             {
